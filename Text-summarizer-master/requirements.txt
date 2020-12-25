@@ -5,3 +5,4 @@ spacy-streamlit==0.1.0
 textblob==0.15.3
 nltk==3.5
 pattern==3.6
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz
