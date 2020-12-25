@@ -4,9 +4,9 @@ import spacy
 import spacy_streamlit
 from nltk.corpus import wordnet
 from textblob import TextBlob
-from pattern3.web import Google
+from pattern.web import Google
 import streamlit.components.v1 as components
-from pattern3.en import pluralize , singularize,comparative, superlative
+from pattern.en import pluralize , singularize,comparative, superlative
 import codecs
 nlp = spacy.load('en_core_web_sm')
 
