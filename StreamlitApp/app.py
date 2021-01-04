@@ -38,10 +38,10 @@ import src.pages.about
 
 MENU = {
     "Home" : src.pages.home,
-    "Simple Calculator" : src.pages.calculator,
-    "Calculate Compound Interest" : src.pages.compound,
-    "Scikit Image Demo" : src.pages.scikit_image,
-    "Stocks" : src.pages.stocks,
+    # "Simple Calculator" : src.pages.calculator,
+    # "Calculate Compound Interest" : src.pages.compound,
+    # "Scikit Image Demo" : src.pages.scikit_image,
+    # "Stocks" : src.pages.stocks,
     "Credits" : src.pages.about
 }
 
