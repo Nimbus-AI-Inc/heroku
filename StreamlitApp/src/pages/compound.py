@@ -2,7 +2,7 @@ import pathlib
 import utils.display as udisp
 
 import streamlit as st
-import core.compound.neural_style.CalcEngine as CalcEngine
+import core.compound.neural_style.ImageMain as CalcEngine
 
 def write():
     udisp.title_awesome("Compound Interest Calclator")
