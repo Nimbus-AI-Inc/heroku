@@ -43,7 +43,8 @@ class Database:
                                 host='us-cdbr-east-02.cleardb.com',
                                 user=userName, 
                                 password=passWord, 
-                                db='stock_app')
+                                # db='stock_app'
+                                db='heroku_c0ea56225ce2842')
 
         # create a currsor with the connection 
         mycursor = conn.cursor()
