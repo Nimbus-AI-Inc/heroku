@@ -39,7 +39,8 @@ class Database:
         # create mysql connection to database with login info
         conn = pymysql.connect(
                                 # host="""%admin""",
-                                host='localhost', 
+                                # host='localhost', 
+                                host='us-cdbr-east-02.cleardb.com'
                                 user=userName, 
                                 password=passWord, 
                                 db='stock_app')
@@ -48,7 +49,7 @@ class Database:
         mycursor = conn.cursor()
 
         # creating mysql engine
-        engine = create_engine('mysql+pymysql://{}:{}@localhost/{}'.format(
+        engine = create_engine('mysql+pymysql://{}:{}@us-cdbr-east-02.cleardb.com/{}'.format(
             userName,
             passWord,
             'stock_app'
