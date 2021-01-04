@@ -31,10 +31,10 @@ import utils.display as udisp
 
 import src.pages.home
 import src.pages.about
-import src.pages.calculator
+# import src.pages.calculator
 # import src.pages.compound
-import src.pages.scikit_image
-import src.pages.stocks
+# import src.pages.scikit_image
+# import src.pages.stocks
 
 MENU = {
     "Home" : src.pages.home,
