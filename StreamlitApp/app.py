@@ -32,15 +32,15 @@ import utils.display as udisp
 import src.pages.home
 import src.pages.about
 import src.pages.calculator
-import src.pages.compound
-# import src.pages.scikit_image
+# import src.pages.compound
+import src.pages.scikit_image
 import src.pages.stocks
 
 MENU = {
     "Home" : src.pages.home,
-    "Simple Calculator" : src.pages.calculator,
-    "Calculate Compound Interest" : src.pages.compound,
-    # "Scikit Image Demo" : src.pages.scikit_image,
+    "Text Summarization" : src.pages.calculator,
+    # "Image Styler" : src.pages.compound,
+    "Face Generator" : src.pages.scikit_image,
     "Stocks" : src.pages.stocks,
     "Credits" : src.pages.about
 }
@@ -56,7 +56,7 @@ def main():
         udisp.render_page(menu)
 
     st.sidebar.info(
-        "https://github.com/Avkash/demoapps"
+        "Utilities using AI models"
     )
     st.sidebar.info(
         "demoapps/StreamlitApp"
