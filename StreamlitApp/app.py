@@ -34,14 +34,14 @@ import src.pages.about
 # import src.pages.calculator
 # import src.pages.compound
 # import src.pages.scikit_image
-# import src.pages.stocks
+import src.pages.stocks
 
 MENU = {
     "Home" : src.pages.home,
     # "Simple Calculator" : src.pages.calculator,
     # "Calculate Compound Interest" : src.pages.compound,
     # "Scikit Image Demo" : src.pages.scikit_image,
-    # "Stocks" : src.pages.stocks,
+    "Stocks" : src.pages.stocks,
     "Credits" : src.pages.about
 }
 
