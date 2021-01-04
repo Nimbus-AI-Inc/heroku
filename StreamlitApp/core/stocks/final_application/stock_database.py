@@ -40,7 +40,7 @@ class Database:
         conn = pymysql.connect(
                                 # host="""%admin""",
                                 # host='localhost', 
-                                host='us-cdbr-east-02.cleardb.com'
+                                host='us-cdbr-east-02.cleardb.com',
                                 user=userName, 
                                 password=passWord, 
                                 db='stock_app')
