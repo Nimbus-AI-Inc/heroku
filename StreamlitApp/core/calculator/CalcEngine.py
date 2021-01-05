@@ -36,7 +36,7 @@ def calc_main(title, subtitle):
         subtitle
     )
 
-    activites = ["Summary","Tokenizer","Synonyms","Translator","Search","Spell Correction"]
+    activites = ["Summary", "Tokenizer","Synonyms","Translator","Search","Spell Correction"]
     choice = st.sidebar.selectbox("Select Activity",activites)
     if choice == "Summary":
         html_temp = """
@@ -49,8 +49,8 @@ def calc_main(title, subtitle):
         text_range= st.sidebar.slider("Summarize words Range",25,500)
         text = st.text_area("Input Text For Summary",height=250)
         if st.button("summarize1"):
-            st.warning(summarize(text,word_count=text_range))
-    # Tokenizer 
+           st.warning(summarize(text,word_count=text_range))
+    # Tokenizer
     elif choice == "Tokenizer":
         html_temp1 = """
 	<div style="background-color:#16A085;"><p style="color:white;font-size:60px;">Text Tokenizer</p></div>
@@ -134,45 +134,6 @@ def calc_main(title, subtitle):
             st.success(comparative(text2))
         if st.checkbox("superlative"):
             st.success(superlative(text2))
-    show_operator = False
-    num1 = 0
-    num2 = 0
-    num1_in = st.text_input('Please input first number: ')
-    '''
-    if not num1_in.isnumeric():
-        st.write("The input number must be numeric")
-    else:
-        num1 = int(num1_in)
-    '''
-
-    num2_in = st.text_input('Please input second number: ')
-    '''
-    if not num2_in.isnumeric():
-        st.write("The input number must be numeric")
-    else:
-        num2 = int(num2_in)
-    '''
-
-    if not num1_in.isnumeric() and not num2_in.isnumeric():
-        st.write("Both input must be numeric")
-    else:
-        num1 = int(num1_in)
-        num2 = int(num2_in)
-        show_operator = True
-
-    if show_operator:
-        op_keys = globalDefine.OPERATOR_LIST.keys()    
-        op_id = st.selectbox("Select Operator: ", list(op_keys))
-        op_selected = globalDefine.OPERATOR_LIST.get(op_id)
-
-        if op_selected == "PLUS":
-            st.write("The sum is ", num1 + num2)
-        elif op_selected == "MINUS":
-            st.write("The substrction is ", num1 - num2)
-        elif op_selected == "TIMES":
-            st.write("The multiplication is ", num1 * num2)
-        elif op_selected == "DIVISION":
-            st.write("The division is ", num1 / num2)
-
-    if st.checkbox("Show source code? "):
-        st.code(display.show_code("core/calculator/CalcEngine.py"))
+ 
+    #if st.checkbox("Show source code? "):
+    #    st.code(display.show_code("core/calculator/CalcEngine.py"))
