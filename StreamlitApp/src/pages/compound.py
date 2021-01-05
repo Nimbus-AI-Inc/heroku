@@ -6,6 +6,6 @@ import core.compound.neural_style.ImageMain as CalcEngine
 
 def write():
     udisp.title_awesome("Compound Interest Calclator")
-    CalcEngine.calc_main("CI Calculator", "A Compound Interest Calclator")
+    CalcEngine.calc_main("Image Styler", "An Image Styler")
 
-    st.write("@avkashchauhan")
+    st.write("@aditya")
