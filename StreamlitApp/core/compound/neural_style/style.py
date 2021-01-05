@@ -22,7 +22,6 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 @st.cache
 def load_model(model_path):
-    print('load model')
     with torch.no_grad():
         style_model = TransformerNet()
         state_dict = torch.load(model_path)

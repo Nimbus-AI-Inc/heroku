@@ -31,14 +31,14 @@ import utils.display as udisp
 
 import src.pages.home
 import src.pages.about
-import src.pages.calculator
+#import src.pages.calculator
 import src.pages.compound
 #import src.pages.scikit_image
 import src.pages.stocks
 
 MENU = {
     "Home" : src.pages.home,
-    "Text Summarization" : src.pages.calculator,
+    #"Text Summarization" : src.pages.calculator,
     "Image Styler" : src.pages.compound,
     #"Face Generator" : src.pages.scikit_image,
     "Stocks" : src.pages.stocks,
