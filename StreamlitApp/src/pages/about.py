@@ -8,4 +8,4 @@ def write():
     udisp.render_md("resources/credits.md")
 
     st.write("Thanks!!")
-    st.write("@avkashchauhan")
+    st.write("@Aditya")
