@@ -18,4 +18,3 @@ requests==2.22.0
 json5==0.9.4
 Pillow==7.0.0
 base58==2.0.0
-awesome-streamlit==20200728.1
