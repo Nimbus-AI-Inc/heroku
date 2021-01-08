@@ -39,7 +39,6 @@ class Regression():
     # constructor function
     def __init__(self, ticker_selected, n):
         db = Database()
-        print('In get most recent')
 
         df = db.get_most_recent()
         # reading in csv file of stock data

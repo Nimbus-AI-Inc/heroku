@@ -138,14 +138,11 @@ class Application():
         st.line_chart(data=df_errors, width=800, height=300)
 
 # Vivek if __name__ == '__main__':
-def calc_main(title, subtitle):
-    st.sidebar.title(title)
-    st.sidebar.info(
-        subtitle
-    )
+def calc_main():
     ap = Application()
 
-    st.title('Stock Predicting App')
+    st.title('Nimbus Stocks')
+    st.sidebar.header("Input Options") 
     
     ticker_selected, n = ap.nav_bar()
     

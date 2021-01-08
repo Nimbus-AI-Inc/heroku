@@ -35,15 +35,15 @@ class Database:
             file = f.readlines()
             userName = file[0].split('\n')[0]
             passWord = file[1].split('\n')[0]
+            
 
         # create mysql connection to database with login info
         conn = pymysql.connect(
-                                # host="""%admin""",
-                                # host='localhost', 
+                                #host='localhost', 
                                 host='us-cdbr-east-02.cleardb.com',
                                 user=userName, 
                                 password=passWord, 
-                                # db='stock_app'
+                                #db='stock_app')
                                 db='heroku_c0ea56225ce2842')
 
         # create a currsor with the connection 
@@ -51,6 +51,7 @@ class Database:
 
         # creating mysql engine
         engine = create_engine('mysql+pymysql://{}:{}@us-cdbr-east-02.cleardb.com/{}'.format(
+        #engine = create_engine('mysql+pymysql://{}:{}@localhost/{}'.format(
             userName,
             passWord,
             'stock_app'

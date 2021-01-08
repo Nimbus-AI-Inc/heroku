@@ -42,24 +42,14 @@ import streamlit as st
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-def yearly_compound_interest(P, R, T):   
-    CI = P * (pow((1 + R / 100), T)) 
-    return CI
+def calc_main():
 
-def monthly_compound_interest(P, R, T):   
-    CI = P * ((1 + R / 12) ** (12 * T))
-    return CI
-
-def calc_main(title, subtitle):
-    st.sidebar.title(title)
-    st.sidebar.info(
-        subtitle
-    )
-    st.title('MosAIc: An AI Image Style Editor')
+    st.title('Nimbus Art')
+    st.sidebar.header("Input Options") 
 
     img = st.sidebar.selectbox(
         'Select Image',
-        ('amber.jpg', 'cat.png', 'MIT.jpg')
+        ('dogs.jpg', 'Taj-Mahal.jpg', 'senate.jpg')
     )
 
     style_name = st.sidebar.selectbox(
@@ -86,6 +76,4 @@ def calc_main(title, subtitle):
         image = Image.open(output_image)
         st.image(image, width=400)
 
-    if st.checkbox("Show help document? "):
-        display.render_md("resources/compound.md")
         

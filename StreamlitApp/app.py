@@ -25,42 +25,37 @@ def set_png_as_page_bg(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
 
-set_png_as_page_bg('b.jpg')
+set_png_as_page_bg('gray.jpg')
 
 import utils.display as udisp
 
 import src.pages.home
 import src.pages.about
-#import src.pages.calculator
 import src.pages.compound
-#import src.pages.scikit_image
+import src.pages.crypto
 import src.pages.stocks
+import src.pages.scikit_image
+import src.pages.calculator
 
 MENU = {
     "Home" : src.pages.home,
-    #"Text Summarization" : src.pages.calculator,
     "Image Styler" : src.pages.compound,
-    #"Face Generator" : src.pages.scikit_image,
     "Stocks" : src.pages.stocks,
+    "Crypto" : src.pages.crypto,
+    "Face Generator" : src.pages.scikit_image,
+    "Text Editor" : src.pages.calculator,
     "Credits" : src.pages.about
 }
 
 
 def main():
-    st.sidebar.title("Navigate yourself...")
-    menu_selection = st.sidebar.radio("Choice your option...", list(MENU.keys()))
+    st.sidebar.title("Browse Our Library:")
+    menu_selection = st.sidebar.radio("Choose your option...", list(MENU.keys()))
 
     menu = MENU[menu_selection]
 
     with st.spinner(f"Loading {menu_selection} ..."):
         udisp.render_page(menu)
-
-    st.sidebar.info(
-        "Utilities using AI models"
-    )
-    st.sidebar.info(
-        "demoapps/StreamlitApp"
-    )
 
 if __name__ == "__main__":
     main()

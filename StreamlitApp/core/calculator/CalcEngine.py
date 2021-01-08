@@ -21,6 +21,7 @@ nlp = spacy.load('en_core_web_sm')
 #custom funtion 
 def summary(text):
     return summarize(text)
+    
 
 # Custom Components Fxn
 def st_calculator(calc_html,width=1000,height=1350):
@@ -28,34 +29,24 @@ def st_calculator(calc_html,width=1000,height=1350):
 	page = calc_file.read()
 	components.html(page,width=width,height=height,scrolling=False)
 
-def calc_main(title, subtitle):
-    st.write("Text Summarization")    
-
-    st.sidebar.title(title)
-    st.sidebar.info(
-        subtitle
-    )
+def calc_main():
+    st.write("Nimbus Words")   
+    st.sidebar.header("Input Options") 
 
     activites = ["Summary", "Tokenizer","Synonyms","Translator","Search","Spell Correction"]
     choice = st.sidebar.selectbox("Select Activity",activites)
     if choice == "Summary":
-        html_temp = """
-	<div style="background-color:#16A085;"><p style="color:white;font-size:60px;">Text Summarizer</p></div>
-	"""
-        components.html(html_temp)
+        st.title('AI Text Summarizer')
         text = st.text_area("Input Text For Summary",height=300)
         if st.button("summarize"):
             st.success(summary(text))
         text_range= st.sidebar.slider("Summarize words Range",25,500)
         text = st.text_area("Input Text For Summary",height=250)
-        if st.button("summarize1"):
+        if st.button("custom summarization"):
            st.warning(summarize(text,word_count=text_range))
     # Tokenizer
     elif choice == "Tokenizer":
-        html_temp1 = """
-	<div style="background-color:#16A085;"><p style="color:white;font-size:60px;">Text Tokenizer</p></div>
-	"""
-        components.html(html_temp1)
+        st.title('Text Tokenizer')
         row_data = st.text_area("write Text For Tokenizer")
         docx= nlp(row_data)
         if st.button("Tokenizer"):
@@ -66,10 +57,7 @@ def calc_main(title, subtitle):
             spacy_streamlit.visualize_parser(docx)
        # synonyms      
     elif choice == "Synonyms":
-        html_temp2 = """
-	<div style="background-color:#16A085;"><p style="color:white;font-size:60px;">Words Synonyms</p></div>
-	""" 
-        components.html(html_temp2)
+        st.title('Synonym Generator')
         text = st.text_area("Enter Text")
         if st.button("Find"):
             for syn in wordnet.synsets(text):
@@ -83,10 +71,7 @@ def calc_main(title, subtitle):
                 st.success(syn.examples())
       # Translator          
     elif choice == "Translator":
-        html_temp3 = """
-	<div style="background-color:#16A085;"><p style="color:white;font-size:60px;">Text Translator</p></div>
-	""" 
-        components.html(html_temp3)
+        st.title('Speech Tranlation')
         row_text = st.text_area("Enter Your Text For Translation",height=300)
         translation_text = TextBlob(row_text)
         list1 = ["en","ta","pa","gu","hi","ur","kn","bn","te"]
@@ -96,10 +81,7 @@ def calc_main(title, subtitle):
             st.success(translation_text.translate(to=a))
     #Search Bar
     elif choice == "Search":
-        html_temp4 = """
-	<div style="background-color:#16A085;"><p style="color:white;font-size:60px;,text-align:center;">Search Bar</p></div>
-	""" 
-        components.html(html_temp4)
+        st.title('Web Search')
         row_text= st.text_input("Search Anything")
         google = Google(license=None)
         if st.button("search"):
@@ -107,28 +89,19 @@ def calc_main(title, subtitle):
                 st.write(search_result.text)
                 st.warning(search_result.url)
     elif choice == "Spell Correction":
-        html_temp6 = """
-	<div style="background-color:#16A085;"><p style="color:white;font-size:60px;">Spell Correction</p></div>
-	"""
-        components.html(html_temp6)
+        st.title('AI Spell Correction')
         text_data = st.text_area("Enter Text Here")
         a = TextBlob(text_data)
         if st.button("Correct"):
             st.success(a.correct())
-        html_temp7 = """
-	<div style="background-color:tomato;"><p style="color:white;font-size:60px;,text-align:center;">pluralize & singularize</p></div>
-	"""
-        components.html(html_temp7)
+        st.title('Pluralize & Singularize')
         text_data1 = st.text_input("Enter a word For pluralize / singularize")
         if st.checkbox("pluralize"):
             st.warning(pluralize(text_data1))
         if st.checkbox("singularize"):
             st.warning(singularize(text_data1))
         
-        html_temp8 = """
-	<div style="background-color:#16A085;"><p style="color:white;font-size:60px;,text-align:center;">comparative & superlative</p></div>
-	""" 
-        components.html(html_temp8)
+        st.title('Compartitive & Superlative')
         text2 = st.text_input("Enter Text For comparative & superlative")
         if st.checkbox("comparative"):
             st.success(comparative(text2))
