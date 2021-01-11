@@ -21,10 +21,6 @@ import time
 # Title
 def calc_main():
     st.title('Nimbus Crypto')
-    st.markdown("""
-    This app provides data analysis cryptocurrency prices for the top 100 cryptocurrency from the **CoinMarketCap**!
-
-    """)
     #---------------------------------#
     # About
     expander_bar = st.beta_expander("How To Use This App")
