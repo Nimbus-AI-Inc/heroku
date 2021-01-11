@@ -46,6 +46,15 @@ def calc_main():
 
     st.title('Nimbus Art')
     st.sidebar.header("Input Options") 
+    expander_bar = st.beta_expander("How To Use This App")
+    expander_bar.markdown("""
+
+    1) Please select an **image** from the dropdown box located in the sidebar.
+
+    2) Select a **style** which you would like image to be converted to.
+
+    3) Hit **Stylize** to see your newly created art. 
+    """)
 
     img = st.sidebar.selectbox(
         'Select Image',

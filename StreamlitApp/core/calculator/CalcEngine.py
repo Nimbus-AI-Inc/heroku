@@ -32,6 +32,12 @@ def st_calculator(calc_html,width=1000,height=1350):
 def calc_main():
     st.write("Nimbus Words")   
     st.sidebar.header("Input Options") 
+    expander_bar = st.beta_expander("How To Use This App")
+    expander_bar.markdown("""
+    * **Python libraries:** base64, pandas, streamlit, numpy, matplotlib, seaborn, BeautifulSoup, requests, json, time
+    * **Data source:** [CoinMarketCap](http://coinmarketcap.com).
+    * **Credit:** Web scraper adapted from the Medium article *[Web Scraping Crypto Prices With Python](https://towardsdatascience.com/web-scraping-crypto-prices-with-python-41072ea5b5bf)* written by [Bryan Feng](https://medium.com/@bryanf).
+    """)
 
     activites = ["Summary", "Tokenizer","Synonyms","Translator","Search","Spell Correction"]
     choice = st.sidebar.selectbox("Select Activity",activites)

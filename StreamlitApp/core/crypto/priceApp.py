@@ -22,16 +22,17 @@ import time
 def calc_main():
     st.title('Nimbus Crypto')
     st.markdown("""
-    This app retrieves cryptocurrency prices for the top 100 cryptocurrency from the **CoinMarketCap**!
+    This app provides data analysis cryptocurrency prices for the top 100 cryptocurrency from the **CoinMarketCap**!
 
     """)
     #---------------------------------#
     # About
-    expander_bar = st.beta_expander("About")
+    expander_bar = st.beta_expander("How To Use This App")
     expander_bar.markdown("""
-    * **Python libraries:** base64, pandas, streamlit, numpy, matplotlib, seaborn, BeautifulSoup, requests, json, time
-    * **Data source:** [CoinMarketCap](http://coinmarketcap.com).
-    * **Credit:** Web scraper adapted from the Medium article *[Web Scraping Crypto Prices With Python](https://towardsdatascience.com/web-scraping-crypto-prices-with-python-41072ea5b5bf)* written by [Bryan Feng](https://medium.com/@bryanf).
+
+    1) Select a **cryptocurrency** located within the sidebar on the left to show our analysis of the currency. 
+
+    2) View the analytics below such as percent change of given time variables and current values, which are updated in realtime. Feel free to download a **csv file** containing these figures.
     """)
 
 
